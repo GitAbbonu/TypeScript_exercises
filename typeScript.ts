@@ -1,41 +1,22 @@
-// Add types to this function declaration.
+/**
+ * START: Follow the instructions below.
+ */
 
-function doubleThePopulation(value: number) {
-  return value * 2;
+function getPopulation(): any {
+  return 69_950_850;
 }
 
-// Correct or remove the function calls which cause type errors.
+// Add a type assertion after the call to `getPopulation()`.
+// Hint: What's the actual type of the value returned by `getPopulation()`?
 
-doubleThePopulation(5);
+const population = getPopulation() as number;
 
-doubleThePopulation(+"6.12");
+// Now you've added a type assertion, there's a type error in the code below.
+// Remove the code that is incorrect.
 
-doubleThePopulation(8_526);
+// console.log(population.toUpperCase());
 
-// doubleThePopulation(false);
-
-// Alter this function so the `language2` parameter is optional.
-// Hint: Check `language2` is not `undefined` before passing it to `console.log()`.
-
-function languagesSpoken(
-  country: string,
-  language1: string,
-  language2?: string
-): void {
-  console.log(`The languages spoken in ${country} are:`);
-
-  console.log(language1);
-
-  if (language2 !== undefined) {
-    console.log(language2);
-  }
-}
-
-languagesSpoken("Colombia", "Spanish", "English");
-
-languagesSpoken("Greece", "Greek");
-
-languagesSpoken("New Zealand", "English", "Māori");
+console.log(population * 2);
 
 // ----
 

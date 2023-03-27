@@ -1,1 +1,1 @@
-# Add types to the functions in exercise-2-function-types-start.ts.
+# Add a type assertion and remove the invalid code in exercise-3-type-assertions-start.ts.
