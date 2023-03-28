@@ -1,22 +1,42 @@
-// Add type annotations to each of these variables.
+/**
+ * START: Follow the instructions below.
+ */
 
-let country: string = "Italy";
+// Add a type annotation to this variable that describes the object it contains.
 
-let year: undefined | number = undefined;
+const countryPopulation: { code: string; population: number } = {
+  code: "NZ",
+  population: 5_135_300,
+};
 
-let averageTemperature: number = 23.6;
+// Define a `Country` interface that describes the object in this variable.
+// Add the `Country` type as a type annotation for this variable.
 
-let visited: boolean = true;
+interface Country {
+  name: string;
+  code: string;
+  population: number;
+}
 
-let currency: null = null;
+const countryData: Country = {
+  name: "India",
+  code: "IN",
+  population: 1_352_642_280,
+};
 
-// Change the type annotations on these variables so they are correct.
+// Define a `Currency` type alias that describes the object in this variable.
+// Add the `Currency` type as a type annotation for this variable.
+type Currency = {
+  name: string;
+  code: string;
+  symbol: string;
+};
 
-let population: number = 47_450_795;
-
-let isSummer: boolean = false;
-
-let languages: string = "Spanish, English";
+const currencyData: Currency = {
+  name: "Euro",
+  code: "EUR",
+  symbol: "€",
+};
 
 // ----
 
