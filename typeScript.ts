@@ -2,36 +2,37 @@
  * START: Follow the instructions below.
  */
 
-interface Country {
+// Make this identity function generic.
+// This should fix the type errors on Line 13 and 15.
+// Hint: The type for the `value` function parameter should use a type variable.
+
+function identity<T>(value: T): T {
+  return value;
+}
+
+let value1 = identity<string>("France");
+
+let value2 = identity<number>(67_413_000);
+
+// ----
+
+async function fetchData<Type>(url: string) {
+  const response = await fetch(url);
+  const responseBody = await response.json();
+
+  return responseBody as User;
+}
+
+interface User {
   name: string;
-  code: string;
 }
 
-// Complete the `CountryWithPopulation` interface:
-//
-// - Extend the `Country` interface
-// - Add a `population` property with an appropriate type
+// Pass the `User` type as a type argument to the generic `fetchData()` function.
+// This should fix the type error on Line 35.
 
-interface CountryWithPopulation extends Country {
-  population: number;
-}
+let user: User = await fetchData("http://api.com/user/1");
 
-const countryA: CountryWithPopulation = {
-  name: "India",
-  code: "IN",
-  population: 1_352_642_280,
-};
-
-const countryB: Country = {
-  name: "Italy",
-  code: "IT",
-};
-
-const countryC: CountryWithPopulation = {
-  name: "Spain",
-  code: "ES",
-  population: 47_450_795,
-};
+console.log(user.name);
 
 // ----
 
