@@ -1,23 +1,73 @@
-// Make the interface generic in exercise-2-make-an-interface-generic-start.ts.
+/**
+ * START: Follow the instructions below.
+ */
 
-interface Country<T> {
+// Add a type annotation for this array.
+// Use the array literal type syntax: type[]
+// Hint: Look at the type that TypeScript has inferred.
+
+const currencies1: string[] = ["NZD", "THB", "NGN"];
+
+// Add a type annotation for this array.
+// Use the generic interface type `Array`: Array<type>
+
+const currencies2: Array<string> = ["EUR", "COP", "INR"];
+
+// Add a type annotation for this array.
+// Use the array literal type syntax: type[]
+
+const populations1: number[] = [50_372_424, 1_352_642_280, 211_400_708];
+
+// Add a type annotation for this array.
+// Use the generic interface type `Array`: Array<type>
+
+const populations2: Array<number> = [5_135_300, 331_893_745, 1_412_600_000];
+
+// ----
+
+// You will use this interface to describe the shape of the objects in the
+// arrays below. Change the types for the properties in this interface so
+// they are correct.
+
+interface Country {
   name: string;
-  languages: T;
+  code: string;
+  population: number;
 }
 
-const languagesObj1: Country<string> = {
-  name: "New Zealand",
-  languages: "English, Māori",
-};
+// Add a type annotation for this array of objects.
+// Use the array literal type syntax: Type[]
+// Hint: Make use of the `Country` type.
 
-console.log(languagesObj1.languages);
+const countries1: Country[] = [
+  {
+    name: "China",
+    code: "CN",
+    population: 1_412_600_000,
+  },
+  {
+    name: "Italy",
+    code: "IT",
+    population: 60_317_116,
+  },
+];
 
-const languagesObj2: Country<string[]> = {
-  name: "Spain",
-  languages: ["Spanish", "Catalan", "Galician", "Basque", "Valencian"],
-};
+// Add a type annotation for this array of objects.
+// Use the generic interface type `Array`: Array<type>
+// Hint: Make use of the `Country` type.
 
-console.log(languagesObj2.languages.join(", "));
+const countries2: Array<Country> = [
+  {
+    name: "Thailand",
+    code: "TH",
+    population: 69_950_850,
+  },
+  {
+    name: "Greece",
+    code: "GR",
+    population: 10_678_632,
+  },
+];
 
 // ----
 
