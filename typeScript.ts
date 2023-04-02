@@ -2,47 +2,27 @@
  * START: Follow the instructions below.
  */
 
-interface Country {
+type CountryData = {
   name: string;
-  code: string;
-}
-
-interface CountryStatistics {
-  population: number;
-}
-
-interface CountryLanguages {
   languages: string[];
-}
-
-// Change the `CountryWithLanguages` type into an intersection type
-// that uses the interfaces defined above.
-//
-// This should fix the type error on Line 28.
-
-type CountryWithLanguages = Country & CountryLanguages;
-
-const countryA: CountryWithLanguages = {
-  name: "Greece",
-  code: "GR",
-  languages: ["Greek"],
+  population: number;
 };
 
-// Create an intersection type named `CountryWithStatistics` that
-// describes the shape of the object below. Use the interfaces
-// defined above.
+// Complete the syntax for this mapped type.
+// Hint: Mapped types are generic.
 //
-// Use the type alias syntax: type CountryWithStatistics = type;
+// Replace the `never` type with the correct type.
 //
-// Add a type annotation with the `CountryWithStatistics` type on
-// the variable `countryB`.
+// These changes should fix all the type errors.
 
-type CountryWithStatistics = Country & CountryStatistics;
+type Descriptions<Type> = {
+  [Property in keyof Type]: string;
+};
 
-const countryB: CountryWithStatistics = {
-  name: "China",
-  code: "CN",
-  population: 1_412_600_000,
+const countryDataDescriptions: Descriptions<CountryData> = {
+  name: "The name of the country.",
+  languages: "The languages spoken in the country.",
+  population: "The population of the country.",
 };
 
 // ----

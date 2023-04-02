@@ -1,1 +1,1 @@
-# Combine existing interfaces into intersection types in exercise-2-create-intersection-types-start.ts.
+# Complete the mapped type in exercise-3-complete-a-mapped-type-start.ts.
