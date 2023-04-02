@@ -2,34 +2,48 @@
  * START: Follow the instructions below.
  */
 
-// The `Currency` type doesn't work for the type of value in the
-// `narniaCurrency` variable. Change the `Currency` type into a
-// union type that works for both the variables.
-//
-// This should fix the type error on Line 15.
-
-type Currency = string | boolean;
-
-let indianCurrency: Currency = "Indian rupee";
-
-let narniaCurrency: Currency = false;
-
-// Change the type for the `data` function parameter so it can accept
-// the different types of data that are passed when it's being called.
-//
-// This should fix the type error on Lines 28 and 30.
-
-function outputCountryData(country: string, data: number | string) {
-  console.log(`The data for ${country} is: ${data}`);
+interface Country {
+  name: string;
+  code: string;
 }
 
-outputCountryData("Italy", 60_317_116);
+interface CountryStatistics {
+  population: number;
+}
 
-outputCountryData("Nigeria", "Naira");
+interface CountryLanguages {
+  languages: string[];
+}
 
-outputCountryData("United States of America", "English");
+// Change the `CountryWithLanguages` type into an intersection type
+// that uses the interfaces defined above.
+//
+// This should fix the type error on Line 28.
 
-outputCountryData("India", 1_352_642_280);
+type CountryWithLanguages = Country & CountryLanguages;
+
+const countryA: CountryWithLanguages = {
+  name: "Greece",
+  code: "GR",
+  languages: ["Greek"],
+};
+
+// Create an intersection type named `CountryWithStatistics` that
+// describes the shape of the object below. Use the interfaces
+// defined above.
+//
+// Use the type alias syntax: type CountryWithStatistics = type;
+//
+// Add a type annotation with the `CountryWithStatistics` type on
+// the variable `countryB`.
+
+type CountryWithStatistics = Country & CountryStatistics;
+
+const countryB: CountryWithStatistics = {
+  name: "China",
+  code: "CN",
+  population: 1_412_600_000,
+};
 
 // ----
 
